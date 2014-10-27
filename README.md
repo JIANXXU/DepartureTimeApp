@@ -13,9 +13,9 @@ Technical choices
 _________________
 * Swift is chosen for the programming language.  (Experience < 1 Month)
 * Objective C is also needed to understand tutorials and sample codes written in Objective C.
-* MapKit, CoreLocation has been used.
+* MapKit, CoreLocation has been used. (Exp < 1 Week)
 * Unit Test for the iOS app is omitted due to time constraints.
-* Limited UI support
+* Limited UI support.
 
 Key Classes
 __________
