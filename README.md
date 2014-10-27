@@ -3,7 +3,7 @@ DepartureTimeApp
 
 About Me
 --------
-I'm an engineer and enjoying learning and programming and solving most challenging and difficult problems. [Resume](https://s3-us-west-1.amazonaws.com/jianxxu/JIAN+XU+Resume+2014.pdf)
+I'm an engineer and enjoying learning and programming and solving most challenging and difficult problems. [Resume](https://s3-us-west-1.amazonaws.com/jianxxu/JIAN+XU+Resume+2014.pdf). [Service][https://github.com/JIANXXU/DepartureTimeSvc]
 
 Introduction
 ------------
