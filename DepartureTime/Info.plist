@@ -36,5 +36,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The current location is always logged by the app, even in the background</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Departure time is going to use your current location</string>
 </dict>
 </plist>

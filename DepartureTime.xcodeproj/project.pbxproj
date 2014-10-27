@@ -13,6 +13,10 @@
 		D4567F7F19FD86A2004C7D65 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4567F7E19FD86A2004C7D65 /* Images.xcassets */; };
 		D4567F8219FD86A2004C7D65 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4567F8019FD86A2004C7D65 /* LaunchScreen.xib */; };
 		D4567F8E19FD86A2004C7D65 /* DepartureTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4567F8D19FD86A2004C7D65 /* DepartureTimeTests.swift */; };
+		D4567F9819FD86B2004C7D65 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4567F9719FD86B2004C7D65 /* CoreLocation.framework */; };
+		D4567F9A19FD86BC004C7D65 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4567F9919FD86BC004C7D65 /* MapKit.framework */; };
+		D4567F9C19FD943E004C7D65 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4567F9B19FD943E004C7D65 /* Annotation.swift */; };
+		D49CCD1819FDAB810058748C /* DepartureTimeApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49CCD1719FDAB810058748C /* DepartureTimeApplication.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		D4567F8719FD86A2004C7D65 /* DepartureTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DepartureTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4567F8C19FD86A2004C7D65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4567F8D19FD86A2004C7D65 /* DepartureTimeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureTimeTests.swift; sourceTree = "<group>"; };
+		D4567F9719FD86B2004C7D65 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D4567F9919FD86BC004C7D65 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D4567F9B19FD943E004C7D65 /* Annotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		D49CCD1719FDAB810058748C /* DepartureTimeApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartureTimeApplication.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4567F9A19FD86BC004C7D65 /* MapKit.framework in Frameworks */,
+				D4567F9819FD86B2004C7D65 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +69,8 @@
 		D4567F6919FD86A2004C7D65 = {
 			isa = PBXGroup;
 			children = (
+				D4567F9919FD86BC004C7D65 /* MapKit.framework */,
+				D4567F9719FD86B2004C7D65 /* CoreLocation.framework */,
 				D4567F7419FD86A2004C7D65 /* DepartureTime */,
 				D4567F8A19FD86A2004C7D65 /* DepartureTimeTests */,
 				D4567F7319FD86A2004C7D65 /* Products */,
@@ -77,12 +89,14 @@
 		D4567F7419FD86A2004C7D65 /* DepartureTime */ = {
 			isa = PBXGroup;
 			children = (
+				D49CCD1719FDAB810058748C /* DepartureTimeApplication.swift */,
 				D4567F7719FD86A2004C7D65 /* AppDelegate.swift */,
 				D4567F7919FD86A2004C7D65 /* ViewController.swift */,
 				D4567F7B19FD86A2004C7D65 /* Main.storyboard */,
 				D4567F7E19FD86A2004C7D65 /* Images.xcassets */,
 				D4567F8019FD86A2004C7D65 /* LaunchScreen.xib */,
 				D4567F7519FD86A2004C7D65 /* Supporting Files */,
+				D4567F9B19FD943E004C7D65 /* Annotation.swift */,
 			);
 			path = DepartureTime;
 			sourceTree = "<group>";
@@ -212,7 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D49CCD1819FDAB810058748C /* DepartureTimeApplication.swift in Sources */,
 				D4567F7A19FD86A2004C7D65 /* ViewController.swift in Sources */,
+				D4567F9C19FD943E004C7D65 /* Annotation.swift in Sources */,
 				D4567F7819FD86A2004C7D65 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +421,7 @@
 				D4567F9319FD86A2004C7D65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4567F9419FD86A2004C7D65 /* Build configuration list for PBXNativeTarget "DepartureTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +430,7 @@
 				D4567F9619FD86A2004C7D65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
