@@ -113,10 +113,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, DepartureTime
         applicationLogic.getDepartureTimesAsync(userLocation)
     }
     
-    func didReceiveDepartureTime(results: NSArray) {
+    func didReceiveDepartureTime(jsonResults: NSArray?) {
         
         // Turn off network indicator
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        
+        if (jsonResults == nil) {
+            return;
+        }
+        
+        var results: NSArray = jsonResults!
         
         if (annotations != nil) {
             myMapView.removeAnnotations(annotations)
@@ -126,19 +132,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate, DepartureTime
         var stopCodeMap = [String: Annotation]()
         
         for dict in results as [NSDictionary] {
-            let stopCode = dict["stopCode"] as String
-            var depTime = String(dict["nextDepartureTime"] as Int) + " m for " + (dict["routeName"] as String)
+            if let stopCode = dict["stopCode"] as String? {
+                var depTime = String(dict["nextDepartureTime"] as Int) + " m for " + (dict["routeName"] as String)
             
-            if let ann = stopCodeMap[stopCode] {
-                ann.subtitle = ann.subtitle + ", " + depTime
-            } else {
-                let lat = dict["latitude"] as Double
-                let long = dict["longitude"] as Double
-                var location = CLLocationCoordinate2D(latitude: lat, longitude: long)
-                var title = (dict["agencyName"] as String) + " @ " + (dict["stopName"] as String)
-                var myAnn = Annotation(coordinate:location, title: title, subtitle: depTime)
+                if let ann = stopCodeMap[stopCode] {
+                    ann.subtitle = "\(ann.subtitle), \(depTime)"
+                } else {
+                    if let lat = dict["latitude"] as? Double {
+                        if let long = dict["longitude"] as? Double {
+                            if let agencyName = dict["agencyName"] as? String {
+                                if let stopName = dict["stopName"] as? String {
+                                    var location = CLLocationCoordinate2D(latitude: lat, longitude: long)
+                                    var title = "\(agencyName) @ \(stopName)";
+                                    var myAnn = Annotation(coordinate:location, title: title, subtitle: depTime)
                 
-                stopCodeMap[stopCode] = myAnn
+                                    stopCodeMap[stopCode] = myAnn
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 

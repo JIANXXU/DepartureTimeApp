@@ -39,15 +39,13 @@ class DepartureTimeApplication {
                 NSLog("\(err.localizedDescription)")
             }
             var err: NSError?
-            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray
+            var jsonResult = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray?
             
             if (err != nil) {
                 NSLog("Json error \(err!.localizedDescription)")
             }
             
-            let results: NSArray = jsonResult
-            self.delegate.didReceiveDepartureTime(results)
-            
+            self.delegate.didReceiveDepartureTime(jsonResult)            
         })
         // start the task
         task.resume()
@@ -55,5 +53,5 @@ class DepartureTimeApplication {
 }
 
 protocol DepartureTimeApplicationProtocol {
-    func didReceiveDepartureTime(results: NSArray)
+    func didReceiveDepartureTime(results: NSArray?)
 }
