@@ -26,8 +26,10 @@ User Story
 ----------
 * On start, the map will be centered on user's current location.
 * Click Default Location button will take user to San Francisco.  Default Location is added for testing purpose.
+
 ![Default Location Clicked](https://s3-us-west-1.amazonaws.com/jianxxu/IMG_4207.PNG)
 * Click Refresh button will refresh to get latest transportation departure information.
 * Tap on the pin will show details.
+
 ![Pin tapped](https://s3-us-west-1.amazonaws.com/jianxxu/IMG_4208.PNG)
 ![Another pin tapped](https://s3-us-west-1.amazonaws.com/jianxxu/IMG_4209.PNG)
